@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.timebox {
+    height: 450px;
+    background-color: bisque;
+}
+.btnbox {
+    height: 50px;
+    text-align: center;
+    position: relative;
+}
+.timebox {
+    padding-top: 20px;
+    text-align: center;
+}
+.circle {
+    fill: none;
+    stroke: #7c83FD;
+    stroke-width: 8;
+    stroke-dasharray: 628;
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transform-box:fill-box;
+    stroke-linecap: round;
+    transition: all 1s;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    background-color:#999;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    vertical-align: top;
+}
+
+.clickable {
+    background-color: #36cb99;
+    cursor: pointer;
+}
+.btn:disabled {
+    background-color: #999;
+}
+.invisitable {
+    visibility: hidden;
+}

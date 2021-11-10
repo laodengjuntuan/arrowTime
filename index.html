@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrowTime</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="timebox">
+        <svg width="300" height="300">
+            <defs>
+                <filter id="blur-2px">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+                    <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+            </defs>
+            <circle class="circle" cx="150" cy="150" r="100" fill="none" stroke-width="10" filter="url(#blur-2px)" ></circle>
+            <text x="150" y="155" style="fill:#7c83FD;" text-anchor="middle">
+                <tspan class="time">00:00:00</tspan>
+              </text>
+        </svg>
+        <h2 id="nowTime"></h2>
+    </div>
+    <div class="btnbox">
+        <input type="text" name="" id="time-value" placeholder="请输入分钟数" class="invisitable"> 
+        <input class="forward" checked id="forward" type="radio" name="timer"/>
+        <label for="forward">正向计时</label>
+        <input class="backward" id="backward" type="radio" name="timer"/>
+        <label for="backward">倒计时</label>
+        <button class="btn clickable" id="start">开始</button>
+        <button class="btn" id="end">结束</button>
+    </div>
+    <p>时间记录</p>
+    <ol id="time-table">
+    </ol>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
