@@ -36,19 +36,20 @@ function TimeItem(startTime, endTime) {
 
 start.onclick = function() {
     if (!isRunning) {
+        let item = new TimeItem()
         isRunning = true
         start.classList.remove('clickable')
         end.classList.add('clickable')
         let ifForward = document.getElementsByName("timer")[0].checked
-        ifForward ? timerForward() : timerBackward()
+        ifForward ? timerForward(item) : timerBackward(item)
+        storage.push(item)
     } else {
         console.log('正在运行中...')
     }
 }
 
 
-function timerForward() {
-    let item = new TimeItem()
+function timerForward(item) {
 
     item.startTime = getTime()
 
@@ -59,11 +60,9 @@ function timerForward() {
         time.innerHTML = formatSeconds(total)
     }, 1000)
 
-    storage.push(item)
 }
 
-function timerBackward() {
-    let item = new TimeItem()
+function timerBackward(item) {
     item.startTime = getTime()
 
     let total = parseInt(timerInput.value) * 60 // 以秒为单位
@@ -75,8 +74,6 @@ function timerBackward() {
         time.innerHTML = formatSeconds(current)
         setPercent(current, total)
     }, 1000)
-
-    storage.push(item)
 }
 
 function timeOver() {
